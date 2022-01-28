@@ -18,8 +18,7 @@ telegraf    ALL = NOPASSWD: /usr/sbin/knotc -f stats
   command = "sh /opt/telegraf/telegraf-knot.sh"
   data_format = "influx"
 
-  [inputs.exec.tags]
-    influxdb_database = "Knot"
+  interval = "10s"
 ```
 
 
