@@ -1,12 +1,12 @@
 #!/bin/sh
 
 if [ "$1" = "-s" ] && [ -n "$2" ]; then
-    knot_socket="$2"
+    knot_cmd="sudo knotc -f stats -s $2"
 else
-    knot_socket="/run/knot/knot.sock"
+    knot_cmd="sudo knotc -f stats"
 fi
 
-if stats_output=$(sudo knotc -s "$knot_socket" -f stats 2>/dev/null); then
+if stats_output=$($knot_cmd 2>/dev/null); then
     echo "$stats_output" | while read -r line; do
         stats_module=$( echo "$line" | cut -d "." -f 1 | cut -d '-' -f 2)
         stats_key=$( echo "$line" | cut -d "." -f 2 | cut -d " " -f 1)
