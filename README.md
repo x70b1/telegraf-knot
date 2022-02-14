@@ -9,13 +9,16 @@ A telegraf plugin to collect stats from Knot DNS.
 
 ## Configuration
 
+To allow telegraf to request the stats it needs a sudo rule as shown.
+The script accepts a parameter `-s` to specify the path to the Knot DNS socket.
+
 ```
 telegraf    ALL = NOPASSWD: /usr/sbin/knotc -f stats
 ```
 
 ```
 [[inputs.exec]]
-  command = "sh /opt/telegraf/telegraf-knot.sh"
+  command = "sh /opt/telegraf/telegraf-knot.sh -s /run/knot/knot.sock"
   data_format = "influx"
 
   interval = "10s"
