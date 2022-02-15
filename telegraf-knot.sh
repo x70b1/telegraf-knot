@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$1" = "-s" ] && [ -n "$2" ]; then
-    knot_cmd="sudo knotc -f stats -s $2"
+    knot_cmd="sudo knotc -f -s $2 stats"
 else
     knot_cmd="sudo knotc -f stats"
 fi
