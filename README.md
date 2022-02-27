@@ -4,7 +4,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/x70b1/telegraf-knot.svg)](https://github.com/x70b1/telegraf-knot/graphs/contributors)
 [![license](https://img.shields.io/github/license/x70b1/telegraf-knot.svg)](https://github.com/x70b1/telegraf-knot/blob/master/LICENSE)
 
-A telegraf plugin to collect stats from [Knot DNS](https://knot.readthedocs.io/en/master/operation.html#statistics).
+A [Telegraf](https://github.com/influxdata/telegraf) plugin to collect stats from [Knot DNS](https://knot.readthedocs.io/en/master/operation.html#statistics).
 
 
 ## Configuration
