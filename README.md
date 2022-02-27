@@ -18,7 +18,7 @@ To allow Telegraf to request the stats it needs a sudo rule as shown.
 telegraf    ALL = NOPASSWD: /usr/sbin/knotc -f stats
 ```
 
-```
+```ini
 [[inputs.exec]]
   command = "sh /opt/telegraf/telegraf-knot.sh -s /run/knot/knot.sock"
   data_format = "influx"
@@ -29,7 +29,7 @@ telegraf    ALL = NOPASSWD: /usr/sbin/knotc -f stats
 
 ## Output
 
-```
+```sh
 # sh /opt/telegraf/telegraf-knot.sh
 server zone-count=4
 rrl slipped=0
