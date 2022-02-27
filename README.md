@@ -4,13 +4,15 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/x70b1/telegraf-knot.svg)](https://github.com/x70b1/telegraf-knot/graphs/contributors)
 [![license](https://img.shields.io/github/license/x70b1/telegraf-knot.svg)](https://github.com/x70b1/telegraf-knot/blob/master/LICENSE)
 
-A telegraf plugin to collect stats from Knot DNS.
+A telegraf plugin to collect stats from [Knot DNS](https://knot.readthedocs.io/en/master/operation.html#statistics).
 
 
 ## Configuration
 
-To allow telegraf to request the stats it needs a sudo rule as shown.
+Enable the `mod-stats` module of knot according the Knot DNS [docs](https://www.knot-dns.cz/docs/latest/html/modules.html#stats-query-statistics).
 The script accepts a parameter `-s` to specify the path to the Knot DNS socket.
+To allow Telegraf to request the stats it needs a sudo rule as shown.
+
 
 ```
 telegraf    ALL = NOPASSWD: /usr/sbin/knotc -f stats
